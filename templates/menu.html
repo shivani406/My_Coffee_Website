@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Brew & Bean - Menu</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+    />
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- JS for Contact Dropdown -->
+    <script>
+      function toggleContactDropdown() {
+        document.getElementById("contact-dropdown").classList.toggle("hidden");
+      }
+    </script>
+  </head>
+
+  <body class="bg-[#fcfaf8]" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+    <div class="flex flex-col min-h-screen overflow-x-hidden">
+      <!-- Header -->
+      <header class="flex items-center justify-between border-b border-[#f3ede7] px-10 py-3">
+        <!-- Logo + Brand Name -->
+        <div class="flex items-center gap-4 text-[#1b140e]">
+          <div class="size-4">
+            <!-- Replace with your actual logo if needed -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z" fill="currentColor" />
+            </svg>
+          </div>
+          <h2 class="text-lg font-bold tracking-[-0.015em]">Brew &amp; Bean</h2>
+        </div>
+
+        <!-- Nav Links + Cart -->
+        <div class="flex items-center gap-8 relative">
+          <!-- Nav Links -->
+          <div class="flex items-center gap-9">
+            <a href="{{ url_for('our_story') }}" class="text-sm font-medium text-[#1b140e]">About</a>
+
+            <!-- Contact Dropdown -->
+            <div class="relative">
+              <button onclick="toggleContactDropdown()" class="text-sm font-medium text-[#1b140e] focus:outline-none">
+                Contact
+              </button>
+              <div
+                id="contact-dropdown"
+                class="hidden absolute right-0 mt-2 w-52 bg-white border border-[#f3ede7] rounded-lg shadow-lg z-50 p-3 space-y-2"
+              >
+                <p class="text-sm font-medium text-[#1b140e]">📞 123-456-7890</p>
+                <p class="text-sm font-medium text-[#1b140e]">📧 cafe@brewbean.com</p>
+                <p class="text-sm font-medium text-[#1b140e]">📷 @brewbean_cafe</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cart Button -->
+          <a
+            href="{{ url_for('cart') }}"
+            class="flex items-center justify-center rounded-lg h-10 bg-[#f3ede7] text-[#1b140e] gap-2 text-sm font-bold px-2.5"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- Menu Section -->
+      <main class="px-10 py-6">
+        <h1 class="text-2xl font-bold text-[#1b140e] mb-4">Our Menu</h1>
+
+        <!-- Menu Grid (Reusable) -->
+        <section>
+          <h2 class="text-lg font-bold text-[#1b140e] mt-4 mb-2">Coffee</h2>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3">
+            <!-- One item example -->
+            <div class="flex flex-col gap-3 pb-3">
+              <div class="w-full aspect-square bg-cover bg-center rounded-lg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgt8vNYjdbcYU4RjLVY5MbIDlp1I2SarTq4AL6oW90IFRQw-SrYb85e8FiGnHDlNKDYPXKBD4DhXXGZlYXllZbhuaB8-bHzGsxCTiWHU-Os2mmDQfIVYlMdi9H-q5mfkLB7b5psGhixJmfFw0p-n4ylYfgtAkuFQ37_kNvEwAcUulK0Hh_BaTsN54GaXSX6Fn961od26VOYENQUdxKJi8swQQEZvD_0n5DcmdyI7La80UWPIIPXumSPHf47-r2i0db8VtWY3BE9yQ');"></div>
+             <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Espresso</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Strong, concentrated coffee</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmz1khLldAuAfjz9ul11yXthtqjS2Ba7hidYfaBtSTHmAW1Nw4_M9Ke7awfeoccZWPILxIPlNssb7lnQOI8dSVMXi9EZIOdSQefm3aKkjv9-Iz9sBiz57RyymrV_GOK3V1MSTQjH61sXDb6rcBO3Ma7230WBqXWGkhEtlYoTYXwAXj9AGKEyRB-qBiFU1S10mEyDb_xlwnb9tgZyhMOVrpemVHHz55ZzOrPuDQ5Lh8rX98QDyRw07qgjTEQXdMJmGPwosUUojW-To");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Cappuccino</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Espresso with steamed milk and foam</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOnDgAn0ThBORqJ2NUUuSrHJpqPjM6XgNr_GGvRnyqwnLoCZCoBNmUm22S0T7cwNCkMebqKZvZpZ37R3g1faWTdgR3xfS3cBMW7SuF4pnwAeE9KuFMpf97UOkZcd8MWyquXSce90jxaK4KophSrrTh72VUhBReMZpqhR43hHgmLgDqRd_A5OwknkA6uB5PczAVRTG7Y1u31F7tGgvT9kBL5nYYUGzUUbFwjk0JVp5jvsuW4EGGfNfFUqu4Oi4OqE6GkqHBcAjkMn8");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Latte</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Espresso with steamed milk</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMaYZP3m-tmtSeOZR2tOx1vQSdMp-IJ_bAA1EEOTz7Iw7EdfqbcTsE2B2FB5cWw6TywJCgAJjhuM_qsgMwSKjn--A2y1a6v6l11UUPvyyd85mTV7MDiEgEnJa0DFtjs5a3hpoyC6P61h0Nu4gMGWxoy51ITUy6FKpsoYFxoNt35qV8dcZ39xu9KLD5eX-aA74rd2jj5k68nR5PkWJ3eGBu0j3pUt_2zCvbQWNTvyR0DwxUz1j7WOVfIVVdVz7w6pKDP4I21rimrP4");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Mocha</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Espresso with chocolate and steamed milk</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAX5xKj4MESPwUOjdMg7fvt1Jie_3QW_9oI9eB9S1GwEIizarC86zrrKKcc-W3K-hwDLRTxtK_dw9azTyzqEVUQ98GJsPOfKPxVFQ7c_5KLyik1Xi2OCeYORnwH5vrpQSCFxFeFIkh3wr0ldvge5Ab0U6Is2chA5QdFxhfWqkMPZzIWiqTtAb5u6sWWt_hbn1ADze6nWEokus9wGwJGdONJREUMF0tM1HXlIDAj8BLa887AbJCB3qoF0c8U0XzIiUlL0wk5D-PkuTM");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Americano</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Espresso diluted with hot water</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNA9bGuzMKFrHVj3TBfsj0cUdtqjrfjjUCMWPCcbAnIfecqw6vKE4xthlIU4EYFJanN0BxwN2n75Y-_EqkwCvMmzQwplizY80OGuT4lCY-KtsBoWWb7JY2PNShNmhh-Xs34zOaQLSBKHNuCbOKFsQXV9TOZOS4zV0ORGFhM3EzLz5BWL2jDmxiyJNMU7qLZCqWs3G3zQeCpNgXJrA29DOtw7D_ITvn04fO0EFPDetfPqtuXHNRZn1ExWSGCMyKZcgtZO9HDB7huik");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Macchiato</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Espresso marked with a dollop of foam</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-[#1b140e] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Tea</h3>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAuhUPVRJ5vIi6xUjWS8eS09k1Kw7YaFAxvzyAfPq-j_XCfFhehhi0qWTrQZawmaYkcTp9H06HDO4dfQ8s3zA8IMRbxsGvBEWOg4uZdHaVDOiRXq8qX9LcTGbspixY2voSouimwXXJ9kWxFZ__Ewq61ySRYym-jFAijhH7afV4pkoJQatqYgamIqrZrvN5dyj_j9uv8OyKjamVblhVJagzCWYSZlTwiLXLQ5gNGTSAa2xrnagfHzKJokWDqa8SSZHJrT9RdevzXzUY");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Green Tea</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Refreshing and light</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyXkMB8QtyFgzG2tazIwPg1skVQFyueYLBzPnNzJ51huYm_vcItB3g5q1H6aO8sfO2PdwJ0OZuDkTeA4z-GN-qmykhvl7yI7IVYCs8CbHIsp052t34fK0KYAOaALqgm3z53fxaQmrImlSnnPtSYSUPd6isUgWa2M7z4kArbP6khpg3xPC_yc1ntag-B5cL-4WubDkiauQsB4bpdEv7bO48wJZfPmGConqt1g-D-M2YAlgTeLsOHEj4kZxuJBAmxmmvhC_lvD67ClE");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Black Tea</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Classic and robust</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAopVxGGRvck_SaMdwf_Yc3rubxgEDOYtNEXRg1P-zKgrDzkpkPkmoLNLU2QzXTywl3aV0Oz2ZuHDgA11Hn7WWSuff0J2zqc_c_2XZN_9qT8de6akpscSCVzvuLzKNschyxNcvYtd15joDnJr1zQk4A8xlICM-aFPdW2pTyx1awYrP5vc0W0tukhJ0OJiDUus33YKu1pgZai8-Gmyp6AisZGAV4xx8JWHceCLOg43XKbxo8nJbHSiPYAa8v6W1l675xTbZedsJg7Zg");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Herbal Tea</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Caffeine-free and soothing</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPFJcPYctr3lNAlgmfwb1ytVzkcjLXxjLAKBPfku0fNOo9wpFqukSCJxgAE2fsPtl3mFgZEZiFm5LTnQ3UECxAJ_trV-8NNxRNUhhLqur6A3p-EXWHib6evEPCrPQQizL-iof4NV2zASn6bodLt_ubKUXPIsMX1azH83EzlwtOhQ_kapEXiq0rakup82nmEAs_Jcxi1EVw-8_MI-7TQbZSEz8qpfaLTtrxGJtziuRtdjk93elhBx8NvwB_7MTysqN7wyypkmTiVQg");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Chai Latte</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Spiced tea with milk</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-[#1b140e] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Pastries</h3>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLXTqLpFYmkZo5WltUenHEUjGIjTje_wUu6i8y9GSOqaMfzqNEQmsPjZqMYoc4LH_mBHzRluW3bWvbLL03Bw_WZyzXNR7ph9uBrMupBwQKti-EOIXKXu_lLHkUYP1vXwLickyswAaNHw7-myBn800TuBE-afSl6ycX1P5SXxpj6OWbPzRCuqDc79-2aNClgZPpaC-nc0xc1Q2H6bvdnIE1OCKVAX37iQD8s_xpQrCLBJ89NEnvm3TP96jQTRkp3uvYNYnhOyxqRSM");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Croissant</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Flaky and buttery</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeBiBqGIJHq642IlbQIQbhB0CV5W80KH-AeAAe1pVESIXYuf3iAwFr8zWI0VRmH77qxC8QLCwKx1d5M_cdQzONbK_O7mhnNzaCKas6cOSkXPNo5R0FraR_qZwe0P0kzOrqecPRMgifp1Ua4OVpMlgPHvwPClBwMH7ahyaHwLpo7G775YoE3nUFu7Kw6c8ID2Ly7VByr-6I34cD9tyaZgevD0SVByquZpE_PL_ZGwXQmVTGM32yNtYR6ugrHhYaL_1B0uoPRh0tTYs");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Muffin</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Sweet and moist</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCl84dPipiNIftNNimU6nEVJo7lnJVpcArLK9DTLBxXeGjJo2UFGfskmisNbfrzl1cu4A807wl9Jipzay2Qug-jhC7am8sC0xtTqbG_jfywgYKTSatZOr_YPvK5UFRaZrPWErvobqbGcOWe_a52KmBAt086NAiKhqAfgrre4dPSuKqnAcTkBBsuMZGuBeKYwXu9Lz5au_c7Ueh1cA_Ohz-iXWACBwYCKFAh2aJWCVWzYmVXv8RJZoXO3H4ESEIZABQC2hIj0Z-_y9U");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Scone</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Crumbly and delicious</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlLMuSMqYAtThhVdmrDHPvLjAvE8bwHrhgRsv8Zsn1fF0xT1MtV05mAM63sAwPk2mfyTnlBA2xUqPed6Nex20AUn6rl1BaXLV3DkH-Mb-rcpTTiudvUTrmaRh3CiKKY-PqCQBO7ZGclKwIU3sWR8-7knD3HBtXXXRGSn8s4Yuuj2UrObtnB193881BQojpUh98FMWIjw0r1dWtB3ujPOENniVdY-cy4sksAQBTmnWhorovjwWMQRXPJxPUZKPDQEt9M1QfjUs-tUc");'
+                ></div>
+                <div>
+                  <p class="text-[#1b140e] text-base font-medium leading-normal">Bagel</p>
+                  <p class="text-[#97724e] text-sm font-normal leading-normal">Chewy and versatile</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

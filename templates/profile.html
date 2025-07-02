@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#fcfaf8] group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3ede7] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#1b140e]">
+            <div class="size-4">
+              <!-- Logo SVG -->
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">...</svg>
+            </div>
+            <h2 class="text-[#1b140e] text-lg font-bold leading-tight tracking-[-0.015em]">Brew &amp; Bites</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#1b140e] text-sm font-medium leading-normal" href="#">Menu</a>
+              <a class="text-[#1b140e] text-sm font-medium leading-normal" href="#">Rewards</a>
+              <a class="text-[#1b140e] text-sm font-medium leading-normal" href="#">Gift Cards</a>
+            </div>
+            <!-- Removed Find a Store Button -->
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRZg7glL9AfbT2KCVSgyhhiz-Ipw5fYob-2wyh9LhVhZM13BYuJw0i4jrxFxl0s-n8y27t8LbcnZtZc12PA-C1pKcL8FEdnCj1cpEXFF17lwbZx6SoPP7UH_1v6eY4XoW3R8lmedotoJ_qaKOFJKi08WPjVGHigxQ6kCr5_CjHtArtd5jHmg5YX1TYSG-i6oHucILrmG85SzKMIJybvIar9Pw2Lf3KPD-g_H4RIR_oM6egV1VBPowFp7WWSKtMr8BRzrNwtE_VHvQ");'
+            ></div>
+          </div>
+        </header>
+
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#1b140e] tracking-light text-[32px] font-bold leading-tight min-w-72">Account</p>
+            </div>
+
+            <h3 class="text-[#1b140e] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Account Details</h3>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#1b140e] text-base font-medium leading-normal pb-2">User ID</p>
+                <input class="form-input ... h-14" value="" />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#1b140e] text-base font-medium leading-normal pb-2">Password</p>
+                <input class="form-input ... h-14" value="" />
+              </label>
+            </div>
+            <div class="flex px-4 py-3 justify-start">
+              <button class="..."> <span class="truncate">Update Password</span> </button>
+            </div>
+
+            <h3 class="text-[#1b140e] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Order History</h3>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-xl border border-[#e7dbd0] bg-[#fcfaf8]">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-[#fcfaf8]">
+                      <th class="px-4 py-3 text-left text-[#1b140e] w-[400px] text-sm font-medium leading-normal">Date</th>
+                      <th class="px-4 py-3 text-left text-[#1b140e] w-[400px] text-sm font-medium leading-normal">Items</th>
+                      <th class="px-4 py-3 text-left text-[#1b140e] w-[400px] text-sm font-medium leading-normal">Total</th>
+                      <th class="px-4 py-3 text-left text-[#1b140e] w-60 text-[#97724e] text-sm font-medium leading-normal">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#e7dbd0]">
+                      <td class="h-[72px] px-4 py-2 w-[400px] text-[#97724e] text-sm font-normal leading-normal">05/15/2024</td>
+                      <td class="h-[72px] px-4 py-2 w-[400px] text-[#97724e] text-sm font-normal leading-normal">Latte, Croissant</td>
+                      <td class="h-[72px] px-4 py-2 w-[400px] text-[#97724e] text-sm font-normal leading-normal">$8.50</td>
+                      <td class="h-[72px] px-4 py-2 w-60 text-[#97724e] text-sm font-bold leading-normal tracking-[0.015em]">
+                        <a href="cart.html">Reorder</a>
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#e7dbd0]">
+                      <td class="h-[72px] px-4 py-2 w-[400px] text-[#97724e]">04/20/2024</td>
+                      <td class="h-[72px] px-4 py-2 w-[400px] text-[#97724e]">Iced Coffee, Muffin</td>
+                      <td class="h-[72px] px-4 py-2 w-[400px] text-[#97724e]">$6.75</td>
+                      <td class="h-[72px] px-4 py-2 w-60 text-[#97724e] font-bold">
+                        <a href="cart.html">Reorder</a>
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#e7dbd0]">
+                      <td class="h-[72px] px-4 py-2 w-[400px] text-[#97724e]">03/10/2024</td>
+                      <td class="h-[72px] px-4 py-2 w-[400px] text-[#97724e]">Cappuccino, Scone</td>
+                      <td class="h-[72px] px-4 py-2 w-[400px] text-[#97724e]">$7.25</td>
+                      <td class="h-[72px] px-4 py-2 w-60 text-[#97724e] font-bold">
+                        <a href="cart.html">Reorder</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                @container(max-width:120px){.table-de2aa2a1-777b-417c-a4de-e155fdb6cab1-column-120{display: none;}}
+                @container(max-width:240px){.table-de2aa2a1-777b-417c-a4de-e155fdb6cab1-column-240{display: none;}}
+                @container(max-width:360px){.table-de2aa2a1-777b-417c-a4de-e155fdb6cab1-column-360{display: none;}}
+                @container(max-width:480px){.table-de2aa2a1-777b-417c-a4de-e155fdb6cab1-column-480{display: none;}}
+              </style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

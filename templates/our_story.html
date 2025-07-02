@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+    />
+    <title>Our Story - Brew & Bean</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#fbfaf9] group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1edea] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#181410]">
+            <div class="size-4">
+              <!-- Keep your original SVG logo here -->
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- ... SVG PATH CONTENT ... -->
+              </svg>
+            </div>
+            <h2 class="text-[#181410] text-lg font-bold leading-tight tracking-[-0.015em]">Brew &amp; Bean</h2>
+          </div>
+
+          <!-- Updated Navigation -->
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <!-- ✅ Menu -->
+              <a class="text-[#181410] text-sm font-medium leading-normal" href="{{ url_for('menu') }}">Menu</a>
+              <!-- ❌ About Removed -->
+              <!-- ❌ Locations Removed -->
+            </div>
+
+            <!-- ✅ Cart Button -->
+            <a
+              href="{{ url_for('cart') }}"
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f1edea] text-[#181410] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+            >
+              <div class="text-[#181410]">
+                <!-- Cart Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#181410] tracking-light text-[32px] font-bold leading-tight min-w-72">About Us</p></div>
+            <h3 class="text-[#181410] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Our Story</h3>
+            <p class="text-[#181410] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Brew &amp; Bean was founded in 2010 by two friends, Alex and Sarah, who shared a passion for exceptional coffee and creating a welcoming community space. What started
+              as a small coffee cart at local farmers' markets quickly grew into a beloved neighborhood cafe. Our journey has been fueled by a commitment to quality,
+              sustainability, and the art of coffee making.
+            </p>
+            <div class="flex w-full grow bg-[#fbfaf9] @container p-4">
+              <div class="w-full gap-1 overflow-hidden bg-[#fbfaf9] @[480px]:gap-2 aspect-[3/2] rounded-xl grid grid-cols-[2fr_1fr_1fr]">
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none row-span-2"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3CTEsMy3G2iuIitFe2KTDwWMHtdiafyZXaX5joFjvD_UFo4YGUqzWgbWxLbloBc1YzbpgAUvg9ExCUG76fdRxkRaToHZXq0kuNJhqv28UGuKOzs-BuP2nwZeUN0hEEKb_hFPnCViMxp-hM_Xmq1bhMF8IB4U4pbYzOuzylLpEDNbcoxSOzcZPqom46aR4R3UW_5yaQPceAnr_x6rYPgfkOTXRIuf79tvvriuOFN-iNBvAVMkoHa0dSuxAPILdPMlYGRWXqc1eYh8");'
+                ></div>
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none col-span-2 row-span-2"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC399hE_VVCWN-bQ36cePQUY2JaKT4Xse-T8fvt_mjyrXcpggmssrdsIvg5hlnr8svh4vpBsc9RCyF5Z59ql7RG6eu2850wi3NVSVsOFw2uDLN0-WMznQfLfcLb24Ggij1M-eqnrvIkXWFOu1B0P53Wz9T7MVD_f7HZABOE0M_k2aPXDsFJzDSag9sOxdz63Vj1SfzflFQYBV7xM4OCwy223xuVQK9tSYWHRMrIu9L7xJF8KIHIJLLgcO-KjeCJpsuKwdxxbQDQZcI");'
+                ></div>
+              </div>
+            </div>
+            <h3 class="text-[#181410] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Our Journey</h3>
+            <p class="text-[#181410] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              From our humble beginnings, we've expanded our reach while staying true to our core values. We source our beans from ethical and sustainable farms, ensuring that
+              every cup of coffee is not only delicious but also contributes to a better world. Our team of skilled baristas is dedicated to crafting the perfect brew, and we
+              continuously explore new techniques and flavors to delight our customers.
+            </p>
+            <div class="flex w-full grow bg-[#fbfaf9] @container p-4">
+              <div class="w-full gap-1 overflow-hidden bg-[#fbfaf9] @[480px]:gap-2 aspect-[3/2] rounded-xl grid grid-cols-[2fr_1fr_1fr]">
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none row-span-2"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4TlLL_66vnltc5d5Q28s2VZ8l6p2rjFv-dPoL6_5LVO_tBawKDYpMfKY2vxwFuJJU-b75PhA6VTquEFT9Uc6xxLzxO4dcTSQ8FxEzArj-NtVzimlDpj4Kzren74Uho0hSzj0hsdlSCrzYIpmNWvemt4jFi_ZLKqLhikPQLmAkVr6Mq92fAbf_zKvnrUswGhfPUx28idZR5_5P_wdqzmH9OflA7h2tnc0zAf5o_RbHAoBPuoKlu8ESN0w90hmkH5NqEVTNIVRf8cU");'
+                ></div>
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none col-span-2 row-span-2"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIvS6zHTc-pyPmJlepB5Bw6u0-hHU0lxRW8up_LfPymHl97Te5B9iPv1_rf8ITfVKabU_i0G_obe9XHSzBwS3VmdDeHnyq41AiiC6ifkN53_Vd8TwiYsLrfibt7gjv3Jc9tFohZFop-SIYkT9aGP9fvrH2k_uiQVQGQmJhxRqLvxU8nzAETUAc4Pv-NSGAYmXTc_8CzFBrQayEHiBfFtsUw3EfkftPNFbZofu1kyss80e4BugOBraFhOnkpzMuNzVBoMvahQLugDM");'
+                ></div>
+              </div>
+            </div>
+            <h3 class="text-[#181410] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Our Mission</h3>
+            <p class="text-[#181410] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              At Brew &amp; Bean, our mission is to provide an exceptional coffee experience that fosters community and celebrates the artistry of coffee. We strive to create a
+              warm and inviting atmosphere where people can connect, relax, and enjoy the finest coffee. We are committed to sustainability, ethical sourcing, and continuous
+              improvement in everything we do.
+            </p>
+            <div class="flex w-full grow bg-[#fbfaf9] @container p-4">
+              <div class="w-full gap-1 overflow-hidden bg-[#fbfaf9] @[480px]:gap-2 aspect-[3/2] rounded-xl flex">
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4pGtNs8DJSSLIqY_CGVYW1oNpdR2IsOV0bFzb2G1Jm3YdiKawa-oAMhOohcLmdyxA4I3w1uVVrdcWNQfX72GXWH3V7cWKVdcK1JzFn9tXadDfq-k-Awr53I2YopHEIK8-hwQ8LNVIfz92hkxroZzG12xakLFgj6JNd6N4LO3VsDofC_px3aPRdAz2I9GzqwVJPkgmuyE53LYxHZyrlEE0EVqMe84_V0YgHYZeTHgi2nJoE5c6_XOXUSyrTo7ZOQgosCgMQ2_QzlE");'
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

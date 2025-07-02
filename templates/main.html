@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Brew & Bean - Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex min-h-screen flex-col bg-[#fcfaf8] group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between border-b border-solid border-b-[#f3ede7] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#1b140e]">
+            <div class="size-4">
+              <!-- Coffee Logo Icon -->
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M13.8261 17.4264C16.7203...Z"></path>
+              </svg>
+            </div>
+            <h2 class="text-[#1b140e] text-lg font-bold">Brew &amp; Bean</h2>
+          </div>
+        </header>
+
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="flex flex-col w-[512px] max-w-[512px] py-5 flex-1">
+            <!-- Coffee Banner Image -->
+            <div class="w-full bg-center bg-no-repeat bg-cover min-h-[218px] rounded-lg"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADlJIA-_M37RnaofTfcTXLofW5_lugjmVfoVzff7BXnrh7Rm9jjZbnsE-7cq7v6osgLSNkir9JantzfVFlxXsGus5z_cLqVcmTw1gUUfMO1a-vBkCs21TFyLgVNZ4n6Nv5w4gojQcHD-9davtx_WBP7rOlhxUWk6Fg6rJwseVy3vQ-SVNYahxoXRrnnzi7bxA5NnxhyAQpL44X9OnuURfmGW9qyqAL-dauGbrr4F0HSx21CQ8TMscuj3SHdkG0iMYB-e25RWVbRgU");'>
+            </div>
+
+            <h2 class="text-[#1b140e] text-[28px] font-bold text-center py-6">Welcome Back</h2>
+
+            <!-- ✅ Login Form -->
+            <form method="POST" action="/">
+              <!-- Username Field -->
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <input
+                    name="username"
+                    placeholder="Username"
+                    required
+                    class="form-input w-full rounded-lg h-14 p-4 bg-[#f3ede7] text-[#1b140e] placeholder:text-[#97724e] text-base"
+                  />
+                </label>
+              </div>
+
+              <!-- Password Field -->
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                    class="form-input w-full rounded-lg h-14 p-4 bg-[#f3ede7] text-[#1b140e] placeholder:text-[#97724e] text-base"
+                  />
+                </label>
+              </div>
+
+              <!-- Login Button -->
+              <div class="flex px-4 py-3">
+                <button
+                  type="submit"
+                  class="w-full rounded-lg h-10 px-4 bg-[#e57c19] text-[#fcfaf8] text-sm font-bold"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
